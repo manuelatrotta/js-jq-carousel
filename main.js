@@ -36,7 +36,7 @@ function clickNext() {
     imageActive.removeClass('active');
     imageNext.addClass('active');
     circleActive.removeClass('active');
-    circleNext.addClass('next');
+    circleNext.addClass('active');
   }
 }
 
