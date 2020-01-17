@@ -32,8 +32,19 @@ function clickNext() {
     imageNext.addClass('active');
   }
 }
-//medesimo procedimento per clickPrev
-function clickPrev() {
-  alert('click prev');
 
+//medesimo procedimento per clickPrev con condizione imageActive con class first. Si procede in senso opposto
+function clickPrev() {
+//  alert('click prev');
+  var imageActive = $('img.active');
+  var imagePrev = imageActive.prev();
+  //per avere continuità è necessario dire che se l'imageActive è ultima allora si toglie la classe 'active' e viene aggiunta alla seguente.
+  if (imageActive.hasClass('first') == true) {
+    imageActive.removeClass('active');
+    $('img.last').addClass('active');
+  //altrimenti se è false imageActive aggiunge classe 'active' e imageNext la rimuove. Ciò permette ciclicità.
+  }else {
+    imageActive.removeClass('active');
+    imagePrev.addClass('active');
+  }
 }
