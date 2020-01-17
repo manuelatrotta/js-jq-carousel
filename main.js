@@ -19,9 +19,12 @@ $(document) .ready(
 // funzione con clickNext in cui si avrà lo scorrimento delle immagini
 function clickNext() {
 //  alert('click Next');
-//creazione variabili
+//creazione variabili per le immagini
   var imageActive = $('img.active');
   var imageNext = imageActive.next();
+//per i cerchietti
+  var circleActive = $('i.active');
+  var circleNext = circleActive.next();
   //per avere continuità è necessario dire che se l'imageActive è ultima allora si toglie la classe 'active' e viene aggiunta alla seguente.
   if (imageActive.hasClass('last') == true) {
     imageActive.removeClass('active');
