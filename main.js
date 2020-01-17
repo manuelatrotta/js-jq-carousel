@@ -29,10 +29,14 @@ function clickNext() {
   if (imageActive.hasClass('last') == true) {
     imageActive.removeClass('active');
     $('img.first').addClass('active');
+    circleActive.removeClass('active');
+    $('i.first').addClass('active');
   //altrimenti se è false imageActive aggiunge classe 'active' e imageNext la rimuove. Ciò permette ciclicità.
   }else {
     imageActive.removeClass('active');
     imageNext.addClass('active');
+    circleActive.removeClass('active');
+    circleNext.addClass('next');
   }
 }
 
@@ -41,13 +45,20 @@ function clickPrev() {
 //  alert('click prev');
   var imageActive = $('img.active');
   var imagePrev = imageActive.prev();
+  //variabile per i cerchietti
+  var circleActive = $('i.active');
+  var circlePrev = circleActive.prev();
   //per avere continuità è necessario dire che se l'imageActive è ultima allora si toglie la classe 'active' e viene aggiunta alla seguente.
   if (imageActive.hasClass('first') == true) {
     imageActive.removeClass('active');
     $('img.last').addClass('active');
+    circleActive.removeClass('active');
+    $('i.last').addClass('active');
   //altrimenti se è false imageActive aggiunge classe 'active' e imageNext la rimuove. Ciò permette ciclicità.
   }else {
     imageActive.removeClass('active');
     imagePrev.addClass('active');
+    circleActive.removeClass('active');
+    circlePrev.addClass('active');
   }
 }
