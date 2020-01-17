@@ -25,3 +25,7 @@ function clickNext() {
   imageActive.removeClass('active');
   imageNext.addClass('active');
 }
+//medesimo procedimento per clickPrev
+function clickPrev() {
+  alert('click prev');
+}
