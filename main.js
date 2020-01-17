@@ -16,6 +16,13 @@ $(document) .ready(
     );
   }
 );
+//funzione che utilizza la tastiera. keyword keydown
+$(document).keydown(
+  function() {
+    //tramite console verifico la numerazione assegnata 37 = left 39 = right
+    console.log(event.which);
+  }
+)
 // funzione con clickNext in cui si avrà lo scorrimento delle immagini
 function clickNext() {
 //  alert('click Next');
