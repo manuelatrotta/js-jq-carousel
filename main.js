@@ -14,15 +14,22 @@ $(document) .ready(
         clickPrev();
       }
     );
+
+//funzione che utilizza la tastiera. keyword keydown
+    $(document).keydown(
+      function() {
+    //tramite console verifico la numerazione assegnata 37 = left 39 = right
+        console.log(event.which);
+        if(event.keyCode == 39) {
+          clickNext();
+        }
+        else if(event.keyCode == 37) {
+          clickPrev();
+        }
+      }
+    );
   }
 );
-//funzione che utilizza la tastiera. keyword keydown
-$(document).keydown(
-  function() {
-    //tramite console verifico la numerazione assegnata 37 = left 39 = right
-    console.log(event.which);
-  }
-)
 // funzione con clickNext in cui si avrà lo scorrimento delle immagini
 function clickNext() {
 //  alert('click Next');
