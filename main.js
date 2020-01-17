@@ -22,10 +22,18 @@ function clickNext() {
 //creazione variabili
   var imageActive = $('img.active');
   var imageNext = imageActive.next();
-  imageActive.removeClass('active');
-  imageNext.addClass('active');
+  //per avere continuità è necessario dire che se l'imageActive è ultima allora si toglie la classe 'active' e viene aggiunta alla seguente.
+  if (imageActive.hasClass('last') == true) {
+    imageActive.removeClass('active');
+    $('img.first').addClass('active');
+  //altrimenti se è false imageActive aggiunge classe 'active' e imageNext la rimuove. Ciò permette ciclicità.
+  }else {
+    imageActive.removeClass('active');
+    imageNext.addClass('active');
+  }
 }
 //medesimo procedimento per clickPrev
 function clickPrev() {
   alert('click prev');
+
 }
