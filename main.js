@@ -18,5 +18,10 @@ $(document) .ready(
 );
 // funzione con clickNext in cui si avrà lo scorrimento delle immagini
 function clickNext() {
-  alert('click Next');
+//  alert('click Next');
+//creazione variabili
+  var imageActive = $('img.active');
+  var imageNext = imageActive.next();
+  imageActive.removeClass('active');
+  imageNext.addClass('active');
 }
